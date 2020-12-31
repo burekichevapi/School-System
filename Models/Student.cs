@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace FinalProjectSPC.Models
+{
+    public class Student
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+
+        public string GetId() =>
+            Id.ToString().Substring(Id.ToString().Length - 6);
+    }
+}

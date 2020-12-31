@@ -1,0 +1,55 @@
+﻿@model FinalProjectSPC.DTO.EnrollDto
+
+
+<h2>Enroll</h2>
+
+<div>
+    <h3>Courses Offered</h3>
+    <form asp-action="Enroll" method="post">
+        @for (int i = 0; i < Model.CoursesOffered.Count; i++)
+        {
+            <dt>
+                @Html.Raw("Enroll:") <input asp-for="CoursesOffered[i].IsSelected" type="checkbox" />
+            </dt>
+            <dt>
+                @Html.DisplayName(Model.CoursesOffered[i].Name)
+            </dt>
+            <dd>
+                @Html.Display(Model.CoursesOffered[i].Name)
+            </dd>
+            <dt>
+                @Html.Raw("Instructor:")
+                @Html.DisplayName(Model.CoursesOffered[i].InstructorName)
+            </dt>
+            <dt>
+                @Html.Raw("Location:")
+                @Html.DisplayName(Model.CoursesOffered[i].Location)
+            </dt>
+            <dt>
+                @Html.Raw("Start Time:")
+                @Html.DisplayName(Model.CoursesOffered[i].MeetingTime.Value.ToString("h:mm tt"))
+            </dt>
+            <dt>
+                @Html.Raw("End Time:")
+                @Html.DisplayName(Model.CoursesOffered[i].EndingTime.Value.ToString("h:mm tt"))
+            </dt>
+            <dt>
+                @Html.Raw("Start Date:")
+                @Html.DisplayName(Model.CoursesOffered[i].MeetingTime.Value.ToString("yyyy-MM-dd"))
+            </dt>
+            <dt>
+                @Html.Raw("End Date:")
+                @Html.DisplayName(Model.CoursesOffered[i].EndingTime.Value.ToString("yyyy-MM-dd"))
+            </dt>
+            <dt>
+                @Html.Raw("End Date:")
+                @Html.DisplayName(Model.CoursesOffered[i].MeetingDays)
+            </dt>
+            @Html.HiddenFor(m => m.CoursesOffered[i].Id)
+            <hr />
+        }
+        <div class="form-group">
+            <input type="submit" value="Enroll" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

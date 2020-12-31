@@ -1,0 +1,54 @@
+﻿@model FinalProjectSPC.DTO.StudentDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            @for (int i = 0; i < Model.Courses.Count; i++)
+            {
+            <div class="form-group">
+                <label asp-for="Courses" class="control-label">@Model.Courses[i].Name</label>
+                @Html.HiddenFor(m => m.Courses[i].Name)
+                <input asp-for="Courses[i].IsSelected" type="checkbox" />
+                <br />
+                <text class="control-label">@Model.Courses[i].Location</text>
+                @Html.HiddenFor(m => m.Courses[i].Location)
+                <br />
+                <text class="control-label">@Model.Courses[i].MeetingTime</text>
+                @Html.HiddenFor(m => m.Courses[i].MeetingTime)
+                <br />
+                <text class="control-label">@Model.Courses[i].EndingTime</text>
+                @Html.HiddenFor(m => m.Courses[i].EndingTime)
+                <br />
+                <text class="control-label">@Model.Courses[i].Description</text>
+                @Html.HiddenFor(m => m.Courses[i].Description)
+                @Html.HiddenFor(m => m.Courses[i].Id)
+            </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

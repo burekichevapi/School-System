@@ -1,0 +1,42 @@
+﻿@model FinalProjectSPC.Models.StudentCourses
+
+@{
+    ViewData["Title"] = "Drop";
+}
+
+<h2>Drop "@Model.Course.Name"</h2>
+<form asp-action="Drop" asp-route-id="@Model.Id">
+    <dt>
+        @Html.DisplayName(Model.Course.Name)
+    </dt>
+    <dd>
+        @Html.Display(Model.Course.Name)
+    </dd>
+    <dt>
+        @Html.DisplayName(Model.Course.Location)
+    </dt>
+    <dd>
+        @Html.Display(Model.Course.Location)
+    </dd>
+    <dt>
+        @Html.DisplayName("Meeting Time")
+    </dt>
+    <dd>
+        @Model.Course.MeetingTime.ToString()
+    </dd>
+    <dt>
+        @Html.DisplayName("Ending Time")
+    </dt>
+    <dd>
+        @Model.Course.EndingTime.ToString()
+    </dd>
+    <dt>
+        @Html.DisplayName("Meeting Days")
+    </dt>
+    <dd>
+        @Model.Course.MeetingDays
+    </dd>
+    <div class="form-group">
+        <input type="submit" value="Drop" class="btn btn-danger" />
+    </div>
+</form>

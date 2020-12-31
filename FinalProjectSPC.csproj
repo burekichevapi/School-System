@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-FinalProjectSPC-B66DC683-4759-4DB1-B6F3-0EF10ECE3033</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20180812030020_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812030020_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180812030131_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812030131_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180812030423_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812030423_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180812030609_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812030609_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180812031508_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812031508_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180812031904_initial.cs" />
+    <Compile Remove="Data\Migrations\20180812031904_initial.Designer.cs" />
+    <Compile Remove="Migrations\20180822004250_ModifidedAttendancesTable2.cs" />
+    <Compile Remove="Migrations\20180822004250_ModifidedAttendancesTable2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,32 @@
+﻿@model FinalProjectSPC.DTO.LoginDto
+
+@{
+    ViewData["Title"] = "Login or Out";
+}
+
+<h2>Login</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Find" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsStudent" class="control-label">Logging in as a Student?</label>
+                <input asp-for="IsStudent" type="checkbox" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Find" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

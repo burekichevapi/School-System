@@ -1,0 +1,37 @@
+﻿@model FinalProjectSPC.Models.InstructorCourses
+
+@{
+    ViewData["Title"] = "Remove";
+}
+
+<h2>Remove</h2>
+
+<form asp-action="RemoveFromCourse" asp-route-id="@Model.Id">
+    <dt>
+        @Html.DisplayName(Model.Course.Name)
+    </dt>
+    <dd>
+        @Html.Display(Model.Course.Name)
+    </dd>
+    <dt>
+        @Html.DisplayName(Model.Course.Location)
+    </dt>
+    <dd>
+        @Html.Display(Model.Course.Location)
+    </dd>
+    <dt>
+        @Html.DisplayName("Meeting Time")
+    </dt>
+    <dd>
+        @Model.Course.MeetingTime.ToString()
+    </dd>
+    <dt>
+        @Html.DisplayName("Ending Time")
+    </dt>
+    <dd>
+        @Model.Course.EndingTime.ToString()
+    </dd>
+    <div class="form-group">
+        <input type="submit" value="Remove" class="btn btn-danger" />
+    </div>
+</form>

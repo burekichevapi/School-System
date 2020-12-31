@@ -1,0 +1,60 @@
+﻿@model FinalProjectSPC.DTO.InstructorDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instructor</h4>
+    <hr />
+    <hr />
+    <a asp-action="AssignCourse" asp-route-id="@Model.Id">Assign Course</a>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<h3>Assigned Courses</h3>
+<div>
+    @foreach (var course in Model.Courses)
+    {
+        <dt>
+            @Html.DisplayName(course.Name)
+            <a asp-action="RemoveFromCourse" asp-route-instructorId="@Model.Id" asp-route-courseId="@course.Id">Remove from Course</a>
+        </dt>
+        <dd>
+            @Html.Display(course.Name)
+        </dd>
+        <dt>
+            @Html.DisplayName(course.Location)
+        </dt>
+        <dd>
+            @Html.Display(course.Location)
+        </dd>
+        <dt>
+            @Html.DisplayName(course.MeetingTime.ToString())
+        </dt>
+        <dd>
+            @Html.Display(course.EndingTime.ToString())
+        </dd>
+        <hr />
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
